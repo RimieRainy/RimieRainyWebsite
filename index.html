@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RimieRainy</title>
+    <link rel="icon" type="image/ico" href="/drawing/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a19ca669cb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="rainfuction.js"></script>
+    <script src="time.js"></script>
+    <script src="exitbutton.js"></script>
+</head>
+<body class="splat-toggle" onload="startTime()">
+    <div>
+        <div id="clock"></div>
+
+        <!--Home title-->
+        <div class="header">
+            <span class="title">Home <i class="fa-solid fa-house"></i></span>
+        </div>
+        <div class="container">
+            <div class="homewindow">
+                <div class="content">
+                    <p id="greet">Hello!</p>
+                    <p id="intro"><b>I'm Rin</b></p>
+                </div>
+            </div>
+            <nav class="nav-link">
+                <audio id="Enter_Click" src="Audio/Click2.wav" preload="auto"></audio>
+                <audio id="Exit_Click" src="Audio/Click1.wav" preload="auto"></audio>
+                <button onclick="enter_about()" class="nav-link-button">
+                    <div class="nav-pic"><p>about</p></div>
+                </button>
+                <button onclick="enter_link()" class="nav-link-button">
+                    <div class="nav-pic"><p>links</p></div>
+                </button>
+                <button onclick="enter_work()" class="nav-link-button">
+                    <div class="nav-pic"><p>works</p></div>
+                </button>
+                <button onclick="enter_contact()" class="nav-link-button">
+                    <div class="nav-pic"><p>contact</p></div>
+                </button>
+            </nav>
+        </div>
+        <!--About window overlay-->
+        <div class="pane"> <!--Window moving function-->
+            <div id="about-window">
+            <div class="window-header" id="window-header-about">
+                <span class="title">About <i class="fa-solid fa-circle-info"></i></i></span>
+                <span><button class="exit" id="exit-about"  onclick="exit_about()"><i class="fa-solid fa-xmark"></i></button></span>
+            </div>
+            <div id="about-container">
+
+                <div class="profile-text">
+                    <div class="name-penname">
+                        <h2>Valentine Piriyapongpipat</h2>
+                        <h3>Rinrin <span class="alt-name">[Rimie Rainy]</span></h3>
+                    </div>
+                    <p class="description">> Mathematic Languages and Technology Program : MLTP</p>
+                    <p class="description">> Former Student council in Audiovisual equipment</p>
+                </div>
+            </div>
+            <div id="about-info">
+                <div id="about-info-text">
+                    <p class="description-media">I'm studying at Mathematic Languages and Technology Program : MLTP and a Former Student council in audiovisual equipment</p>
+                    <h3 class="title-info">Education <i class="fa-solid fa-graduation-cap"></i></h3>
+                    <p><strong>K-12</strong><span> -> Ubon Ratchathani Rajabhat University Demonstration School</span></p>
+                    <h3 class="title-info">Interests <i class="fa-solid fa-palette"></i></h3>
+                    <ul class="list-linespace">
+                        <li><i class="fa-solid fa-gamepad"></i> Gaming (especially Open World game)</li>
+                        <li><i class="fa-solid fa-paintbrush"></i> Drawing & Animation</li>
+                        <li><i class="fa-solid fa-music"></i> Music</li>
+                        <li><i class="fa-solid fa-cloud-showers-heavy"></i> Rain</li>
+                        <li><i class="fa-solid fa-child-reaching"></i> Dancing</li>
+                        <li><i class="fa-solid fa-cake-candles"></i> Delicious bakerys</li>
+                    </ul>
+                    <h3 class="title-info">Languages proficiency <i class="fa-solid fa-comment"></i></h3>
+                    <ul class="list-linespace">
+                        <li>SAT = 1150</li>
+                            <ul>
+                                <li>Math = 680</li>
+                                <li>Reading and Writing = 470</li>
+                            </ul>
+                        <li>DET = 105</li>
+                            <ul>
+                                <li>Writing = 120</li>
+                                <li>Listening = 115</li>
+                                <li>Reading = 95</li>
+                                <li>Speaking = 90</li>
+                            </ul>
+                        <li>TOEIC = 845</li>
+                            <ul>
+                                <li>Listening = 455 </li>
+                                <li>Reading = 390</li>
+                            </ul>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!--Link window overlay-->
+        <div class="pane">
+            <div id="link-window">
+            <div class="window-header" id="window-header-link">
+                <span class="title">Link <i class="fa-solid fa-comment-dots"></i></span>
+                <span><button class="exit" id="exit-link" onclick="exit_link()"><i class="fa-solid fa-xmark"></i></button></span>
+            </div>
+            <div class="link-container">
+                <div class="socials">
+                    <!--Social media-->
+                    <div class="icon-link"><a href="" target="_blank"><img src="SocialLogo/FB.svg"><span class="social-link">Facebook</span></a></div>
+                    <div class="icon-link"><a href="" target="_blank"><img src="SocialLogo/IG.svg"><span class="social-link">Instagram</span></a></div>
+                    <div class="icon-link" id="X"><a href="" target="_blank"><img src="SocialLogo/X.svg" ><span class="social-link">X/Twitter</span></a></div>
+                    <div class="icon-link" id="TT"><a href="" target="_blank"><img src="SocialLogo/TT.svg" ><span class="social-link">TikTok</span></a></div>
+                    <div class="icon-link" id="YT"><a href="" target="_blank"><img src="SocialLogo/YT.svg" ><span class="social-link">Youtube</span></a></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!--Works window overlay-->
+        <div class="pane">
+            <div id="work-window">
+            <div class="window-header" id="window-header-work">
+                <span class="title">Works <i class="fa-solid fa-folder"></i></span>
+                <span><button class="exit" id="exit-work" onclick="exit_work()"><i class="fa-solid fa-xmark"></i></button></span>
+            </div>
+            <div id="work-container">
+                <!--Computer-->
+                <table id="bigscreen">
+                    <tr id="skills">
+                        <th>TOOLS</th>
+                        <th>SKILL LEVEL</th>
+                        <th>DEVELOPMENT</th>
+                        <th>SKILL LEVEL</th>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                        <td>Davinci Resolve</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                        <td>Blender</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Swift</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                        <td>SolidWork</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>HTML/CSS/JS</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                        <td>Figma</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Latex</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                        <td>Procreate</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>ToonSquid</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                </table>
+                <!--Moblie-->
+                <table id="smallscreen">
+                    <tr id="skills">
+                        <th>TOOLS</th>
+                        <th>SKILL LEVEL</th>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Swift</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>HTML/CSS/JS</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Latex</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                </table>
+
+                <table id="smallscreen">
+                    <tr id="skills">
+                        <th>DEVELOPMENT</th>
+                        <th>SKILL LEVEL</th>
+                    </tr>
+                    <tr>
+                        <td>Davinci Resolve</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Blender</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>SolidWork</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Figma</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Procreate</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></td>
+                    </tr>
+                    <tr>
+                        <td>ToonSquid</td>
+                        <td><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i></td>
+                    </tr>
+                </table>
+
+                <div class="animation-section">
+                    <h2>ANIMATIONS</h2>
+                    <hr>
+                    <div class="video-section">
+                        <video width="1024" height="574" controls>
+                            <source src="" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <video width="1024" height="574" controls>
+                            <source src="" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <video width="1024" height="574" controls>
+                            <source src="" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <video width="1024" height="574" controls>
+                            <source src="" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p id="more">More on <a class="link-more" href="" target="_blank">Youtube</a> and <a class="link-more" href="" target="_blank">TikTok</a></p>
+                    </div>
+                </div>
+                <div class="illustration-section">
+                    <h2>ILLUSTRATIONS</h2>
+                    <hr>
+                    <div class="drawing-section">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart1()">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart2()">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart3()">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart4()">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart5()">
+                        <img src="" alt="drawing" class="arts" onclick="enter_fullart6()">
+                    </div>
+
+                    <p id="more">More on <a class="link-more" href="" target="_blank">X</a> and <a class="link-more" href="" target="_blank">TikTok</a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!--Contact window overlay-->
+        <div class="pane">
+            <div id="contact-window">
+            <div class="window-header" id="window-header-contact">
+                <span class="title">Contact <i class="fa-solid fa-paper-plane"></i></span>
+                <span><button class="exit" id="exit-contact" onclick="exit_contact()"><i class="fa-solid fa-xmark"></i></button></span>
+            </div>
+            <div id="contact-container">
+                <div><p class="text" id="subtext">Send an email to </p> <h3 class="text">@gmail</h3></div>
+                <div><p class="text-phone" id="subtext">Or DM me at line</p> <h3 class="text-phone">idline</h3></div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Rain effect in the background-->
+    <div class="rain front-row"></div>
+    <div class="rain back-row"></div>
+    <script src="panes.js"></script>
+</body>
+</html>
